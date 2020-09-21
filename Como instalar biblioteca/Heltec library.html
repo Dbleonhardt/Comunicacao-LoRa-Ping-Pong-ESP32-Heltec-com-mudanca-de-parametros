@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Heltec ESP32+LoRa Series Quick Start — Heltec Automation Docs V0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script async="" src="./Heltec library_files/analytics.js.download"></script><script type="text/javascript" src="./Heltec library_files/modernizr.min.js.download"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="./Heltec library_files/documentation_options.js.download"></script>
+        <script type="text/javascript" src="./Heltec library_files/jquery.js.download"></script>
+        <script type="text/javascript" src="./Heltec library_files/underscore.js.download"></script>
+        <script type="text/javascript" src="./Heltec library_files/doctools.js.download"></script>
+        <script type="text/javascript" src="./Heltec library_files/language_data.js.download"></script>
+        <script async="async" type="text/javascript" src="./Heltec library_files/readthedocs-doc-embed.js.download"></script>
+    
+    <script type="text/javascript" src="./Heltec library_files/theme.js.download"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="./Heltec library_files/theme.css" type="text/css">
+  <link rel="stylesheet" href="./Heltec library_files/pygments.css" type="text/css">
+    <link rel="index" title="Index" href="https://heltec-automation-docs.readthedocs.io/en/latest/genindex.html">
+    <link rel="search" title="Search" href="https://heltec-automation-docs.readthedocs.io/en/latest/search.html">
+    <link rel="next" title="Maximum LoRa Communication Distance Test" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/distance_test.html">
+    <link rel="prev" title="Contents" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/index.html"> 
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html">
+
+<link rel="stylesheet" href="./Heltec library_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./Heltec library_files/readthedocs-data.js.download"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = "esp32/quick_start"
+READTHEDOCS_DATA['source_suffix'] = ".md"
+</script>
+
+<script type="text/javascript" src="./Heltec library_files/readthedocs-analytics.js.download" async="async"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="https://heltec-automation-docs.readthedocs.io/en/latest/index.html" class="icon icon-home"> Heltec Automation Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://heltec-automation-docs.readthedocs.io/en/latest/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Language</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://heltec-automation.readthedocs.io/zh_CN/latest/index.html">简体中文</a></li>
+</ul>
+<p class="caption"><span class="caption-text">LORA GATEWAY</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/sx1301module/index.html">SX1301 Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/ht-m00/index.html">HT-M00 Dual Channel LoRa Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/ht-m01/index.html">HT-M01 Evaluation LoRa Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/ht-m02_4g/index.html">HT-M02 Edge LoRa Gateway(4G/LTE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/ht-m02_poe/index.html">HT-M02 Edge LoRa Gateway(POE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/gateway/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">CubeCell</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/lorawan/index.html">LoRaWAN</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://resource.heltec.cn/download/CubeCell/AT_Command_list/CubeCell_Series_AT_Command_User_Manual_V0.5.pdf">AT Command List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/dev-board/index.html">CubeCell Dev-Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/capsule-sensor/index.html">CubeCell Capsule Seneor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/module/index.html">CubeCell Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/cubecell/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ESP32 + LoRa</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/index.html">Contents</a></li>
+<li class="toctree-l1 current"><a class="reference internal current" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#"><span class="toctree-expand"></span>Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-arduino-board-manager"><span class="toctree-expand"></span>Via Arduino Board Manager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#step1-download-arduino-esp32-support">Step1. Download Arduino-ESP32 Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#step2-download-the-heltec-esp32-library">Step2. Download the Heltec ESP32 Library</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-git">Via Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#example"><span class="toctree-expand"></span>Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#execute-an-example">Execute an example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#new-a-heltec-esp32-program">New a Heltec ESP32 program</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/lorawan/index.html">LoRaWAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/distance_test.html">Maximum Distance Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/wifi_lora_32/index.html">WiFi LoRa 32</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/wireless_stick/index.html">Wireless Stick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/wireless_stick_lite/index.html">Wireless Stick Lite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/wireless_shell/index.html">Wireless Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">STM32 + LoRa</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/lorawan/index.html">LoRaWAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/lora_node_151/index.html">LoRa Node 151</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/turtle_board/index.html">Turtle Board</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/stm32/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ESP32 + Arduino</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32+arduino/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32+arduino/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32+arduino/wifi_kit_32/index.html">WiFi kit 32</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32+arduino/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ESP8266 + Arduino</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp8266+arduino/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp8266+arduino/quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp8266+arduino/wifi_kit_8/index.html">WiFi Kit 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp8266+arduino/frequently_asked_questions.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/index.html">Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/how_to_install_git_and_arduino.html">How to Install Git and Arduino</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/establish_serial_connection.html">Establish Serial Connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/sub_band_usage.html">LoRaWAN Example Sub-Band Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/subscribe_mqtt_messages.html">Subscribe MQTT  Messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/decode_payload.html">Decode LoRaWAN payload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/how_to_config_raspberry_pi.html">How To Config Rasberry Pi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/view_limited_technical_data.html">Get Limited Technical Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/connect_to_single_channel_gateway.html">Connect to Single_channel Gateway</a></li>
+</ul>
+
+            
+          
+        </div>
+      <div id="rtd-ss46y4oo" class="ethical-rtd ethical-dark-theme"></div></div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="https://heltec-automation-docs.readthedocs.io/en/latest/index.html">Heltec Automation Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="https://heltec-automation-docs.readthedocs.io/en/latest/index.html">Docs</a> »</li>
+        
+          <li><a href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/index.html">Contents</a> »</li>
+        
+      <li>Heltec ESP32+LoRa Series Quick Start</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/HelTecAutomation/HeltecDocs/blob/master/en/source/esp32/quick_start.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="heltec-esp32-lora-series-quick-start">
+<h1>Heltec ESP32+LoRa Series Quick Start<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#heltec-esp32-lora-series-quick-start" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://heltec-automation.readthedocs.io/zh_CN/latest/esp32/quick_start.html">简体中文</a></p>
+<p>Before all operation, please confirm whether the <code class="docutils literal notranslate"><span class="pre">USB</span> <span class="pre">driver</span></code>, <code class="docutils literal notranslate"><span class="pre">Git</span></code> and <code class="docutils literal notranslate"><span class="pre">Arduino</span> <span class="pre">IDE</span></code> has been installed correctly. If not, please refer to this two articles <a class="reference external" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/establish_serial_connection.html">establish serial connection</a> and <a class="reference external" href="https://heltec-automation-docs.readthedocs.io/en/latest/general/how_to_install_git_and_arduino.html">Install Git and Arduino IDE</a>.</p>
+<p><strong>There are two methods to install the development framework, choose one of they:</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-arduino-board-manager">Via Arduino Board Manager</a></li>
+<li><a class="reference external" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-git">Via Git</a></li>
+</ul>
+<p>&nbsp;</p>
+<div class="section" id="via-arduino-board-manager">
+<h2>Via Arduino Board Manager<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-arduino-board-manager" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step1-download-arduino-esp32-support">
+<h3>Step1. Download Arduino-ESP32 Support<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#step1-download-arduino-esp32-support" title="Permalink to this headline">¶</a></h3>
+<p>Open Arduino IDE, and click <code class="docutils literal notranslate"><span class="pre">File</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Peferences</span></code>.</p>
+<p><img alt="../_images/0120.png" src="./Heltec library_files/0120.png"></p>
+<p>&nbsp;</p>
+<p><img alt="../_images/0214.png" src="./Heltec library_files/0214.png"></p>
+<p><strong>Input the last ESP32 package URL:</strong> <a class="reference external" href="https://resource.heltec.cn/download/package_heltec_esp32_index.json">https://resource.heltec.cn/download/package_heltec_esp32_index.json</a></p>
+<p><img alt="../_images/0310.png" src="./Heltec library_files/0310.png"></p>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">--&gt;</span> <span class="pre">Board</span> <span class="pre">--&gt;</span> <span class="pre">Boards</span> <span class="pre">Manager...</span></code>, search <code class="docutils literal notranslate"><span class="pre">Heltec</span> <span class="pre">ESP32</span></code> in the new pop-up dialog, then click <code class="docutils literal notranslate"><span class="pre">install</span></code></p>
+<p><img alt="../_images/046.png" src="./Heltec library_files/046.png"></p>
+<p><img alt="../_images/053.png" src="./Heltec library_files/053.png"></p>
+<p>The source code of Heltec ESP series (ESP32 &amp; ESP8266) framework available here: <a class="reference external" href="https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series</a></p>
+</div>
+<div class="section" id="step2-download-the-heltec-esp32-library">
+<h3>Step2. Download the Heltec ESP32 Library<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#step2-download-the-heltec-esp32-library" title="Permalink to this headline">¶</a></h3>
+<p>Open Arduino IDE, then Select <code class="docutils literal notranslate"><span class="pre">Sketch</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Include</span> <span class="pre">Library</span></code>-&gt;<code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Libraries...</span></code>
+Search <code class="docutils literal notranslate"><span class="pre">Heltec</span> <span class="pre">ESP32</span></code> and install it.</p>
+<p><img alt="../_images/063.png" src="./Heltec library_files/063.png"></p>
+<p><img alt="../_images/073.png" src="./Heltec library_files/073.png"></p>
+<p>The source code of <code class="docutils literal notranslate"><span class="pre">Heltec</span> <span class="pre">ESP32</span></code> library available here: <a class="reference external" href="https://github.com/HelTecAutomation/Heltec_ESP32">https://github.com/HelTecAutomation/Heltec_ESP32</a></p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="section" id="via-git">
+<h2>Via Git<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#via-git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>For Windows: <code class="docutils literal notranslate"><span class="pre">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/master/InstallGuide/windows.md</span></code></li>
+<li>For MacOS: <code class="docutils literal notranslate"><span class="pre">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/master/InstallGuide/mac.md</span></code></li>
+<li>For Linux<ul>
+<li>Debian/Ubuntu: <code class="docutils literal notranslate"><span class="pre">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/master/InstallGuide/debian_ubuntu.md</span></code></li>
+<li>Fedora: <code class="docutils literal notranslate"><span class="pre">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/master/InstallGuide/fedora.md</span></code></li>
+<li>OpenSUSE: <code class="docutils literal notranslate"><span class="pre">https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/blob/master/InstallGuide/opensuse.md</span></code></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#example" title="Permalink to this headline">¶</a></h2>
+<p>This section for verifying whether you can program with Arduino or not. Now, The USB cable connects to Heltec ESP32 board, then select your serial port which is connected to Heltec ESP32 board.</p>
+<p>Select a demo example, compile and upload.</p>
+<div class="section" id="execute-an-example">
+<h3>Execute an example<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#execute-an-example" title="Permalink to this headline">¶</a></h3>
+<p>Correctly select a board and relevant options in the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> menu:</p>
+<p><img alt="../_images/083.png" src="./Heltec library_files/083.png"></p>
+<p>Then select an example likes <code class="docutils literal notranslate"><span class="pre">XXXXXX_FactoryTest.ino</span></code></p>
+<p><img alt="../_images/092.png" src="./Heltec library_files/092.png"></p>
+<p>Compile &amp; Upload</p>
+<p><img alt="../_images/102.png" src="./Heltec library_files/102.png"></p>
+</div>
+<div class="section" id="new-a-heltec-esp32-program">
+<h3>New a Heltec ESP32 program<a class="headerlink" href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html#new-a-heltec-esp32-program" title="Permalink to this headline">¶</a></h3>
+<p>Open Arduino IDE, create a new  <code class="docutils literal notranslate"><span class="pre">.ino</span></code> file, then copy the below code.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;heltec.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// the setup routine runs once when starts up</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">(){</span>
+
+  <span class="c1">// Initialize the Heltec ESP32 object</span>
+  <span class="n">Heltec</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="kr">true</span> <span class="cm">/*DisplayEnable Enable*/</span><span class="p">,</span> <span class="kr">true</span> <span class="cm">/*LoRa Disable*/</span><span class="p">,</span> <span class="kr">true</span> <span class="cm">/*Serial Enable*/</span><span class="p">,</span> <span class="kr">true</span> <span class="cm">/*PABOOST Enable*/</span><span class="p">,</span> <span class="mf">470E6</span> <span class="cm">/**/</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// the loop routine runs over and over again forever</span>
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>compile it and upload, the  screen (if this board has a screen) will show and Arduino’s serial monitor will print something, it means Heltec ESP32 board is running successfully!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/distance_test.html" class="btn btn-neutral float-right" title="Maximum LoRa Communication Distance Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/index.html" class="btn btn-neutral float-left" title="Contents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr><div><div id="rtd-r9nhpi24" class="ethical-rtd"></div></div>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2019, Heltec
+      
+        <span class="commit">
+          Revision <code>4ebc87fc</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="https://heltec-automation-docs.readthedocs.io/en/latest/esp32/quick_start.html">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="https://heltec-automation-docs.readthedocs.io/_/downloads/en/latest/pdf/">PDF</a></dd>
+        
+        <dd><a href="https://heltec-automation-docs.readthedocs.io/_/downloads/en/latest/htmlzip/">HTML</a></dd>
+        
+        <dd><a href="https://heltec-automation-docs.readthedocs.io/_/downloads/en/latest/epub/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/heltec-automation-docs/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/heltec-automation-docs/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/heltec-automation-docs/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/HelTecAutomation/HeltecDocs/blob/master/en/source/esp32/quick_start.md">View</a>
+        </dd>
+        
+        <dd>
+          <a href="https://github.com/HelTecAutomation/HeltecDocs/edit/master/en/source/esp32/quick_start.md">Edit</a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/heltec-automation-docs/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+      
+      
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+
+</div>
+</div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+
+<div id="rtd-3zsabxra"></div></body></html>
