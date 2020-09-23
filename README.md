@@ -1,7 +1,5 @@
 # Comunicação LoRa Ping Pong com configuração de parâmetros para dispositivo ESP32 da marca Heltec
-Este é o projeto final da disciplina de sistemas de comunicações. Se trata de uma configuração para que haja uma comunicação LoRa do tipo Ping Pong onde pode ser configurados os parâmetros de transmissão, sendo analisados os dados dos pacotes recebidos do Receptor. 
-
-O usuário pode ligar e desligar o áudio, controlar seu volume, controlar a frequência de sintonia, o método de demodulação empregado (ou nenhum para ouvir o sinal bruto) e ligar ou desligar um filtro de ruídos.
+Este é o projeto final da disciplina de sistemas de comunicações. Se trata de uma configuração para que haja uma comunicação LoRa do tipo Ping Pong onde ao transmitir, podem ser configurados os parâmetros de transmissão, e, ao receber os pacotes, podem ser obtidos as estimativas de qualidade do sinal.
 
 Os arquivos referentes ao projeto final estão na pasta nodejs. A pasta matlab contém os scripts de matlab usados para os testes iniciais do algoritmo e que foram mantidos aqui para fins didáticos.
 
